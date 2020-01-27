@@ -11,10 +11,12 @@ github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af h1:pmfjZENx5i
 github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
 github.com/nortonlifelock/config v1.0.0 h1:vIavblVidEmC5CYzucYscliSIBLnWqsx0WO/dc3DlNY=
 github.com/nortonlifelock/config v1.0.0/go.mod h1:xDBunuC9e1QXxCIM5ZxU7npUXHOaXYDASKGlksgXe84=
+github.com/nortonlifelock/config v1.0.1-0.20200127165405-0cade3207f97/go.mod h1:BHAcHICEyETuWOnooYcREAFhpTCeENOvLzx6FAfzvwc=
 github.com/nortonlifelock/connection v1.0.0 h1:qtUPEZ3RPb1uGb0ityKJsviJ7FLVhzb0AhvaxtVPSV0=
 github.com/nortonlifelock/connection v1.0.0/go.mod h1:D3AcK+pIIFPt/hKhjuEkhkCRaSYelwSYmw8cKqmba/0=
 github.com/nortonlifelock/crypto v1.0.0 h1:iDd822Fqw+YQbbJN2Ynn+tskMm7MDnxltYVGWSDf234=
 github.com/nortonlifelock/crypto v1.0.0/go.mod h1:MHSeDdo7JD2jST/idBo3vUdl/InN0Lhifufwp/QEeYU=
+github.com/nortonlifelock/crypto v1.0.1-0.20200127165412-c97765915ee8/go.mod h1:dJwnmKTSO62/y9nl2H3KYvR8HQXIrkkI9UDtJgIAYp8=
 github.com/nortonlifelock/domain v1.0.0 h1:U0sSI7nonNHIkneroyU/4M2kNxgM9LUsCoSokKdu5/U=
 github.com/nortonlifelock/domain v1.0.0/go.mod h1:K3X+mz2P0Cx9bOob3jzqDCXM8UmAv4HKqrMUqFCOuh4=
 github.com/nortonlifelock/files v1.0.0 h1:AKhTO0ozZsznao9tgrDbNkjaILPFadyBqWIKqSK4ylg=
