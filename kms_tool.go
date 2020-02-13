@@ -12,6 +12,7 @@ func main() {
 	key := flag.String("k", "", "The key to use for encryption")
 	decrypt := flag.Bool("d", false, "Decrypt the message")
 	profile := flag.String("p", "", "The KMS profile to use in ~/.aws")
+	region := flag.String("r", "default", "The region your KMS key exists in")
 
 	client := flag.String("client", "kms", "[kms|aes] delineates the encryption scheme")
 
@@ -27,11 +28,11 @@ func main() {
 	if len(*inputMessage) > 0 {
 
 		if key != nil && len(*key) > 0 {
-			encryptOrDecrypt(*client, *key, EDFlag, *inputMessage, *profile)
+			encryptOrDecrypt(*client, *key, EDFlag, *inputMessage, *profile, *region)
 		} else {
 			appConfig, err := config.LoadConfig(*configPath, *configFile)
 			if err == nil {
-				encryptOrDecrypt(*client, appConfig.EncryptionKey(), EDFlag, *inputMessage, *profile)
+				encryptOrDecrypt(*client, appConfig.EncryptionKey(), EDFlag, *inputMessage, appConfig.KMSProfile(), appConfig.KMSRegion())
 			} else {
 				fmt.Println(fmt.Sprintf("Error while loading the application config  [%s]", err.Error()))
 			}
@@ -42,14 +43,14 @@ func main() {
 	}
 }
 
-func encryptOrDecrypt(client string, key string, EDFlag int, inputMessage string, profile string) {
+func encryptOrDecrypt(client string, key string, EDFlag int, inputMessage string, profile string, region string) {
 	var encryptor crypto.Client
 	var err error
 	if len(profile) == 0 {
-		encryptor, err = crypto.NewEncryptionClientWithDirectKey(client, key)
+		encryptor, err = crypto.NewEncryptionClientWithDirectKey(client, key, region)
 	} else {
 		if client == crypto.KMS {
-			encryptor, err = crypto.CreateKMSClientWithProfile(key, profile)
+			encryptor, err = crypto.CreateKMSClientWithProfile(key, profile, region)
 		} else {
 			err = fmt.Errorf("can only specify profiles with KMS")
 		}
